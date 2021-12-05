@@ -12,10 +12,12 @@
         >
 
         <fragment
-            android:id="@+id/welcom_screen_fragment"
-            android:name="com.bespalov.soccerquizapp.WelcomScreenFragment"
+            android:id="@+id/appNavHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:NavGraph = "@navigation/app_navigation"
+            app:defaultNavHost="true"/>
 
 
     </LinearLayout>

@@ -26,6 +26,7 @@ class WelcomScreenFragment : Fragment() {
        val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
            inflater, R.layout.fragment_welcom_screen, container, false)
 
+        binding.button
         return binding.root
     }
 

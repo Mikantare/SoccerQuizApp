@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/welcomScreenFragment">
+
+    <fragment
+        android:id="@+id/welcomScreenFragment"
+        android:name="com.bespalov.soccerquizapp.WelcomScreenFragment"
+        android:label="fragment_welcom_screen"
+        tools:layout="@layout/fragment_welcom_screen" >
+        <action
+            android:id="@+id/action_welcomScreenFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.bespalov.soccerquizapp.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+</navigation>
