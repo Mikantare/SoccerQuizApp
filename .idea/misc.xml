@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/drawable/lets_play_button_background.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/font/.xml" value="0.15833333333333333" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/font/arizonia.xml" value="0.15833333333333333" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/layout/fragment_quiz.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/layout/fragment_quiz.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/SoccerQuizApp/app/src/main/res/layout/fragment_welcom_screen.xml" value="0.11911231884057971" />
       </map>
     </option>
