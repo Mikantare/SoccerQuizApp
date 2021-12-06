@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
     app:startDestination="@id/welcomScreenFragment">
-
     <fragment
         android:id="@+id/welcomScreenFragment"
         android:name="com.bespalov.soccerquizapp.WelcomScreenFragment"
