@@ -59,7 +59,7 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentQuizBinding = DataBindingUtil.inflate(
+        val binding  = DataBindingUtil.inflate<FragmentQuizBinding>(
             inflater, R.layout.fragment_quiz,container,false)
         getRandomQuiz()
         binding.quizeFragment = this

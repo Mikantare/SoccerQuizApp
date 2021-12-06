@@ -23,7 +23,7 @@ class WelcomScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
+       val binding = DataBindingUtil.inflate<FragmentWelcomScreenBinding>(
            inflater, R.layout.fragment_welcom_screen, container, false)
 
         binding.button
