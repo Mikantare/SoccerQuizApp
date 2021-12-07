@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.bespalov.soccerquizapp.databinding.FragmentQuizBinding
+import com.bespalov.soccerquizapp.databinding.FragmentWelcomScreenBinding
 
 
 /**
@@ -21,8 +22,8 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding: FragmentQuizBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_quiz,container,false)
+        val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
+            inflater, R.layout.fragment_quiz, container, false)
 
         return binding.root
     }

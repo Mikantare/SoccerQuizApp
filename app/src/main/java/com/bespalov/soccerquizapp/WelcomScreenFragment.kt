@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.bespalov.soccerquizapp.databinding.ActivityMainBinding
 import com.bespalov.soccerquizapp.databinding.FragmentQuizBinding
 import com.bespalov.soccerquizapp.databinding.FragmentWelcomScreenBinding
@@ -23,8 +24,12 @@ class WelcomScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       val binding = DataBindingUtil.inflate<FragmentQuizBinding>(
+       val binding = DataBindingUtil.inflate<FragmentWelcomScreenBinding>(
            inflater, R.layout.fragment_welcom_screen, container, false)
+
+        binding.buttonToPlay.setOnClickListener{view: View->
+            Navigation.findNavController(view).navigate(R.id.action_welcomScreenFragment_to_quizFragment)
+        }
 
         return binding.root
     }
