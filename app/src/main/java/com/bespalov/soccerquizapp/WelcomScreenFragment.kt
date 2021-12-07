@@ -19,6 +19,8 @@ import com.bespalov.soccerquizapp.databinding.FragmentWelcomScreenBinding
  */
 class WelcomScreenFragment : Fragment() {
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,6 +35,7 @@ class WelcomScreenFragment : Fragment() {
 
         return binding.root
     }
+
 
 
 }

@@ -5,6 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".QuizFragment">
 
+    <data>
+        <variable
+            name="quizFragment"
+            type="com.bespalov.soccerquizapp.QuizFragment" />
+
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.5" />
+                app:layout_constraintGuide_percent="0.35" />
 
             <ImageView
                 android:id="@+id/LableImageView"
@@ -37,8 +44,8 @@
 
             <ImageView
                 android:id="@+id/ballImageView"
-                android:layout_width="78dp"
-                android:layout_height="79dp"
+                android:layout_width="50dp"
+                android:layout_height="42dp"
                 android:src="@drawable/ic_ball"
                 app:layout_constraintBottom_toTopOf="@+id/CentrGorizontGuideline"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -65,8 +72,11 @@
                 android:id="@+id/textViewQuestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
-                android:text="TextView"
+                android:text="@{quizFragment.currentQuizItem.question}"
                 app:layout_constraintEnd_toEndOf="@+id/LableImageView"
                 app:layout_constraintStart_toStartOf="@+id/LableImageView"
                 app:layout_constraintTop_toBottomOf="@+id/LableImageView" />
@@ -88,19 +98,19 @@
                     android:id="@+id/radioButtonAnswer1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="answer1" />
+                    android:text="@{quizFragment.currentAnswer[0]}" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAnswer2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="answer2" />
+                    android:text="@{quizFragment.currentAnswer[1]}" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAnswer3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="answer3" />
+                    android:text="@{quizFragment.currentAnswer[2]}" />
             </RadioGroup>
 
             <Button
@@ -109,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/lets_play_button_background"
+                android:backgroundTint="#3C883F"
                 android:text="Pass"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
