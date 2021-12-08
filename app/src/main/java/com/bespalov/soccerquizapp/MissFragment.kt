@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 
-class GoalFragment : Fragment() {
+class MissFragment : Fragment() {
 
 
 
@@ -16,7 +16,7 @@ class GoalFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_goal, container, false)
+        return inflater.inflate(R.layout.fragment_miss, container, false)
     }
 
 
