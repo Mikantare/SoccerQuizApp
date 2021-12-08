@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.bespalov.soccerquizapp.databinding.FragmentQuizBinding
-import com.bespalov.soccerquizapp.databinding.FragmentWelcomScreenBinding
 
 
 /**
@@ -63,6 +62,19 @@ class QuizFragment : Fragment() {
             inflater, R.layout.fragment_quiz, container, false)
 
         getRandomQuizItem()
+
+        binding.buttonToAnswer.setOnClickListener { view: View->
+            val selectedCheckBoxId = binding.quizeRadioGroup.checkedRadioButtonId
+            if (selectedCheckBoxId != -1) {
+            var answerIndex: Int
+            when (selectedCheckBoxId) {
+                R.id.radioButtonAnswer1 -> answerIndex = 0
+                R.id.radioButtonAnswer2 -> answerIndex = 1
+                R.id.radioButtonAnswer3 -> answerIndex = 2
+            }
+
+            }
+        }
         binding.quizFragment = this
         return binding.root
     }
@@ -70,7 +82,7 @@ class QuizFragment : Fragment() {
     private fun getRandomQuizItem () {
         quizItems.shuffle()
         currentQuizItem = quizItems[quizItemIndex]
-        currentAnswer = currentQuizItem.answer.toMutableList()
+        currentAnswer = currentQuizItem.answerList.toMutableList()
         currentAnswer.shuffle()
     }
 }
