@@ -30,18 +30,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
-        <ImageView
-            android:id="@+id/ballImageView"
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:src="@drawable/ic_smiley"
-            app:layout_constraintBottom_toTopOf="@+id/CentrGorizontGuideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/LableImageView"
-            app:layout_constraintVertical_bias="0.87" />
-
         <TextView
             android:id="@+id/LogoTextView"
             android:layout_width="wrap_content"
@@ -56,31 +44,44 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.18" />
 
-        <TextView
-            android:id="@+id/textViewMiss"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:text="You've misses :("
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="@+id/LableImageView"
-            app:layout_constraintStart_toStartOf="@+id/LableImageView"
+        <ImageView
+            android:id="@+id/smileyImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_smiley"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LableImageView" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You've missed :("
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/OnMoreTimebutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smileyImageView" />
+
         <Button
-            android:id="@+id/buttonToAnswer"
+            android:id="@+id/OnMoreTimebutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="90dp"
             android:backgroundTint="#3C883F"
-            android:text="On more time?"
+            android:text="On more time"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
