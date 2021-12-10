@@ -3,13 +3,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.bespalov.soccerquizapp.QuizFragment">
+    tools:context=".QuizFragment">
 
     <data>
         <variable
-            name="quizeFragment"
+            name="quizFragment"
             type="com.bespalov.soccerquizapp.QuizFragment" />
-
 
     </data>
 
@@ -45,8 +44,8 @@
 
             <ImageView
                 android:id="@+id/ballImageView"
-                android:layout_width="78dp"
-                android:layout_height="79dp"
+                android:layout_width="50dp"
+                android:layout_height="42dp"
                 android:src="@drawable/ic_ball"
                 app:layout_constraintBottom_toTopOf="@+id/CentrGorizontGuideline"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,14 +69,14 @@
                 app:layout_constraintVertical_bias="0.18" />
 
             <TextView
-                android:id="@+id/textViewQuestion"
+                android:id="@+id/textViewMiss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="8dp"
-                android:text="@{quizeFragment.currentQuizeItem.question}"
+                android:text="@{quizFragment.currentQuizItem.question}"
                 app:layout_constraintEnd_toEndOf="@+id/LableImageView"
                 app:layout_constraintStart_toStartOf="@+id/LableImageView"
                 app:layout_constraintTop_toBottomOf="@+id/LableImageView" />
@@ -90,40 +89,37 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="16dp"
                 android:orientation="vertical"
-                app:layout_constraintBottom_toTopOf="@id/button2"
+                app:layout_constraintBottom_toTopOf="@id/buttonToAnswer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewQuestion">
+                app:layout_constraintTop_toBottomOf="@id/textViewMiss">
 
                 <RadioButton
                     android:id="@+id/radioButtonAnswer1"
                     android:layout_width="match_parent"
-                    android:textSize="16sp"
                     android:layout_height="wrap_content"
-                    android:text="@{quizeFragment.answer[0]}" />
+                    android:text="@{quizFragment.currentAnswer[0]}" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAnswer2"
                     android:layout_width="match_parent"
-                    android:textSize="16sp"
                     android:layout_height="wrap_content"
-                    android:text="@{quizeFragment.answer[1]}" />
+                    android:text="@{quizFragment.currentAnswer[1]}" />
 
                 <RadioButton
                     android:id="@+id/radioButtonAnswer3"
                     android:layout_width="match_parent"
-                    android:textSize="16sp"
                     android:layout_height="wrap_content"
-                    android:text="@{quizeFragment.answer[2]}" />
+                    android:text="@{quizFragment.currentAnswer[2]}" />
             </RadioGroup>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/buttonToAnswer"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/lets_play_button_background"
+                android:backgroundTint="#3C883F"
                 android:text="Pass"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"

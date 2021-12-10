@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_navigation"
     app:startDestination="@id/welcomScreenFragment">
+
     <fragment
         android:id="@+id/welcomScreenFragment"
         android:name="com.bespalov.soccerquizapp.WelcomScreenFragment"
@@ -17,5 +18,36 @@
         android:id="@+id/quizFragment"
         android:name="com.bespalov.soccerquizapp.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_missFragment"
+            app:destination="@id/missFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizFragment_to_goalFragment"
+            app:destination="@id/goalFragment"
+            app:popUpTo="@id/welcomScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/goalFragment"
+        android:name="com.bespalov.soccerquizapp.GoalFragment"
+        android:label="fragment_goal"
+        tools:layout="@layout/fragment_goal" >
+        <action
+            android:id="@+id/action_goalFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/welcomScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/missFragment"
+        android:name="com.bespalov.soccerquizapp.MissFragment"
+        android:label="fragment_miss"
+        tools:layout="@layout/fragment_miss" >
+        <action
+            android:id="@+id/action_missFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
