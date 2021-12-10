@@ -1,11 +1,14 @@
 package com.bespalov.soccerquizapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.bespalov.soccerquizapp.databinding.FragmentQuizBinding
 
 
@@ -66,12 +69,28 @@ class QuizFragment : Fragment() {
         binding.buttonToAnswer.setOnClickListener { view: View->
             val selectedCheckBoxId = binding.quizeRadioGroup.checkedRadioButtonId
             if (selectedCheckBoxId != -1) {
-            var answerIndex: Int
+            var answerIndex = 0
             when (selectedCheckBoxId) {
                 R.id.radioButtonAnswer1 -> answerIndex = 0
                 R.id.radioButtonAnswer2 -> answerIndex = 1
                 R.id.radioButtonAnswer3 -> answerIndex = 2
             }
+                if  (currentAnswer[answerIndex] == currentQuizItem.answerList[0]) {
+                    quizItemIndex++
+                    Log.d("Tsg", "ебать ты прав")
+                    if (quizItemIndex < numberOfQuestions) {
+                    getRandomQuizItem()
+                        binding.invalidateAll()
+                    } else {
+                        // Go to Goal fragment
+                        Log.d("Tsg", "Победа хуйли")
+                        Navigation.findNavController(view).navigate(R.id.action_quizFragment_to_goalFragment)
+                    }
+                } else {
+                    // Go to Miss fragment
+                    Navigation.findNavController(view).navigate(R.id.action_quizFragment_to_missFragment)
+                    Log.d("Tsg", "ебать ты ошибься")
+                }
 
             }
         }
