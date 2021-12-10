@@ -77,19 +77,18 @@ class QuizFragment : Fragment() {
             }
                 if  (currentAnswer[answerIndex] == currentQuizItem.answerList[0]) {
                     quizItemIndex++
-                    Log.d("Tsg", "ебать ты прав")
+                    binding.quizeRadioGroup.clearCheck()
                     if (quizItemIndex < numberOfQuestions) {
                     getRandomQuizItem()
                         binding.invalidateAll()
                     } else {
                         // Go to Goal fragment
-                        Log.d("Tsg", "Победа хуйли")
                         Navigation.findNavController(view).navigate(R.id.action_quizFragment_to_goalFragment)
                     }
                 } else {
                     // Go to Miss fragment
                     Navigation.findNavController(view).navigate(R.id.action_quizFragment_to_missFragment)
-                    Log.d("Tsg", "ебать ты ошибься")
+
                 }
 
             }
