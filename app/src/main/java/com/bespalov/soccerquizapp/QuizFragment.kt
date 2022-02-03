@@ -2,13 +2,14 @@ package com.bespalov.soccerquizapp
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.bespalov.soccerquizapp.databinding.FragmentQuizBinding
 
 
@@ -93,8 +94,26 @@ class QuizFragment : Fragment() {
 
             }
         }
+
+        (activity as AppCompatActivity).supportActionBar?.title = "Soccer Quiz"
+
+        setHasOptionsMenu(true)
+
+
+
         binding.quizFragment = this
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(
+            item,requireView().findNavController()) || super.onOptionsItemSelected(item)
+
     }
 
     private fun getRandomQuizItem () {

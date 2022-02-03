@@ -50,4 +50,14 @@
             app:popUpTo="@id/quizFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.bespalov.soccerquizapp.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/ballFeaturesFragment"
+        android:name="com.bespalov.soccerquizapp.BallFeaturesFragment"
+        android:label="fragment_ball_features"
+        tools:layout="@layout/fragment_ball_features" />
 </navigation>
