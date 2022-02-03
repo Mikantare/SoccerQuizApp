@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,4 +26,16 @@
 
 
     </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigatonView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/nav_drawer_menu"
+            app:headerLayout="@layout/nav_drawer_header"
+            />
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>
